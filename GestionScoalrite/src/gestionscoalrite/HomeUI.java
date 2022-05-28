@@ -4,19 +4,26 @@
  */
 package gestionscoalrite;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
 /**
  *
  * @author PC de Mootaz
  */
 public class HomeUI extends javax.swing.JFrame {
-
-    /**
-     * Creates new form HomeUI
-     */
+    GridBagLayout layout=new GridBagLayout();
+            GestionUserUIPanel Guser;
     public HomeUI() {
         
-        initComponents();
-        System.out.println(Connexion.ID_PERS);
+        initComponents();   
+        Guser=new GestionUserUIPanel();
+        MainPanel.setLayout(layout);
+        GridBagConstraints c=new GridBagConstraints(); 
+        c.gridx=0;
+        c.gridy=0;
+        MainPanel.add(Guser,c);
+        Guser.setVisible(false);
     }
 
     /**
@@ -28,21 +35,140 @@ public class HomeUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ManageUsersBTN = new javax.swing.JButton();
+        ManageStudentsBTN = new javax.swing.JButton();
+        ManageTeachersBTN = new javax.swing.JButton();
+        ManageGroupesBTN = new javax.swing.JButton();
+        ManageMatsBTN = new javax.swing.JButton();
+        ManageCoursBTN = new javax.swing.JButton();
+        ManageResultsBTN = new javax.swing.JButton();
+        ManageAbsenceBTN = new javax.swing.JButton();
+        LogoutBTN = new javax.swing.JButton();
+        MainPanel = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        ManageUsersBTN.setBackground(new java.awt.Color(255, 0, 51));
+        ManageUsersBTN.setForeground(new java.awt.Color(255, 255, 255));
+        ManageUsersBTN.setText("Gestion d'utilisateurs/ rôles");
+        ManageUsersBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ManageUsersBTNActionPerformed(evt);
+            }
+        });
+
+        ManageStudentsBTN.setBackground(new java.awt.Color(255, 0, 51));
+        ManageStudentsBTN.setForeground(new java.awt.Color(255, 255, 255));
+        ManageStudentsBTN.setText("Gestion des etudiants");
+
+        ManageTeachersBTN.setBackground(new java.awt.Color(255, 0, 51));
+        ManageTeachersBTN.setForeground(new java.awt.Color(255, 255, 255));
+        ManageTeachersBTN.setText("Gestion des enseignants");
+
+        ManageGroupesBTN.setBackground(new java.awt.Color(255, 0, 51));
+        ManageGroupesBTN.setForeground(new java.awt.Color(255, 255, 255));
+        ManageGroupesBTN.setText("Gestion des groupes");
+
+        ManageMatsBTN.setBackground(new java.awt.Color(255, 0, 51));
+        ManageMatsBTN.setForeground(new java.awt.Color(255, 255, 255));
+        ManageMatsBTN.setText("Gestion des matieres");
+
+        ManageCoursBTN.setBackground(new java.awt.Color(255, 0, 51));
+        ManageCoursBTN.setForeground(new java.awt.Color(255, 255, 255));
+        ManageCoursBTN.setText("Gestion des cours");
+
+        ManageResultsBTN.setBackground(new java.awt.Color(255, 0, 51));
+        ManageResultsBTN.setForeground(new java.awt.Color(255, 255, 255));
+        ManageResultsBTN.setText("Gestion des resultats");
+
+        ManageAbsenceBTN.setBackground(new java.awt.Color(255, 0, 51));
+        ManageAbsenceBTN.setForeground(new java.awt.Color(255, 255, 255));
+        ManageAbsenceBTN.setText("Gestion des absences");
+
+        LogoutBTN.setBackground(new java.awt.Color(255, 0, 51));
+        LogoutBTN.setForeground(new java.awt.Color(255, 255, 255));
+        LogoutBTN.setText("Deconnexion");
+        LogoutBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutBTNActionPerformed(evt);
+            }
+        });
+
+        MainPanel.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
+        MainPanel.setLayout(MainPanelLayout);
+        MainPanelLayout.setHorizontalGroup(
+            MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        MainPanelLayout.setVerticalGroup(
+            MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 481, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(MainPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ManageUsersBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ManageStudentsBTN)
+                        .addGap(5, 5, 5)
+                        .addComponent(ManageTeachersBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ManageGroupesBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ManageMatsBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ManageCoursBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ManageResultsBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ManageAbsenceBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(LogoutBTN)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ManageStudentsBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ManageTeachersBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ManageUsersBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ManageGroupesBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ManageMatsBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ManageCoursBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ManageResultsBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ManageAbsenceBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LogoutBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ManageUsersBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageUsersBTNActionPerformed
+      Guser.setVisible(true);
+    }//GEN-LAST:event_ManageUsersBTNActionPerformed
+
+    private void LogoutBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBTNActionPerformed
+       Connexion.ID_PERS=0;
+      
+           java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new AuthUI().setVisible(true);
+            }
+        });
+           System.out.println(Connexion.ID_PERS);
+        this.setVisible(false);
+    }//GEN-LAST:event_LogoutBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -75,7 +201,7 @@ public class HomeUI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 HomeUI Home=new HomeUI();
-                Home.setExtendedState(Home.MAXIMIZED_BOTH);
+              //  Home.setExtendedState(Home.MAXIMIZED_BOTH);
                 Home.setVisible(true);
                 
             }
@@ -83,5 +209,15 @@ public class HomeUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton LogoutBTN;
+    private javax.swing.JPanel MainPanel;
+    private javax.swing.JButton ManageAbsenceBTN;
+    private javax.swing.JButton ManageCoursBTN;
+    private javax.swing.JButton ManageGroupesBTN;
+    private javax.swing.JButton ManageMatsBTN;
+    private javax.swing.JButton ManageResultsBTN;
+    private javax.swing.JButton ManageStudentsBTN;
+    private javax.swing.JButton ManageTeachersBTN;
+    private javax.swing.JButton ManageUsersBTN;
     // End of variables declaration//GEN-END:variables
 }

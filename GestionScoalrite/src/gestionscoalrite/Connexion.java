@@ -5,6 +5,7 @@
 package gestionscoalrite;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -51,7 +52,21 @@ public  class Connexion {
         }
         return retourner ;
         }
-
+       
+       static ArrayList<User> ConsulterUser(){
+           String Query="SELECT * FROM user";
+           try{
+               PreparedStatement stmt=cnx.prepareStatement(Query);
+               ResultSet rslt=stmt.executeQuery();
+               ArrayList<User> users=new ArrayList<User>();
+               User user = new User();
+               while(rslt.next()){
+               
+               } 
+           }catch(SQLException e){
+               e.printStackTrace();
+           }
+       }
        
 
 }

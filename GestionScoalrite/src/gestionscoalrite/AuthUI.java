@@ -152,7 +152,7 @@ public class AuthUI extends javax.swing.JFrame{
             java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 HomeUI Home=new HomeUI();
-                Home.setExtendedState(Home.MAXIMIZED_BOTH);
+             //   Home.setExtendedState(Home.MAXIMIZED_BOTH);
                 Home.setVisible(true);
               
             }
